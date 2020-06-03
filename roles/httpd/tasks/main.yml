@@ -1,0 +1,8 @@
+---
+ - name: Installing httpd in slave server 
+   yum: 
+    name: httpd
+    state: latest
+ - name: creating httpd direcotry 
+   file: 
+   

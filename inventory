@@ -1,0 +1,46 @@
+[myself]
+localhost
+
+[intraweb]
+slave.server.com
+
+[everyone:children]
+myself
+intraweb
+
+[gms_cogeco]
+cgtmaweb03cn-s.gms.netcracker.com ansible_ssh_user=gms_krbh0717 ansible_become_method=dzdo ansible_become_user=netcrk
+cgtmaweb02cn-s.gms.netcracker.com ansible_ssh_user=gms_krbh0717 ansible_become_method=dzdo ansible_become_user=netcrk
+cgtmaweb01cn-s.gms.netcracker.com ansible_ssh_user=gms_krbh0717 ansible_become_method=dzdo ansible_become_user=netcrk
+cgtmaweb04cn-s.gms.netcracker.com ansible_ssh_user=gms_krbh0717 ansible_become_method=dzdo ansible_become_user=netcrk
+
+[cogeco-tst]
+cgtmaweb03cn-s.gms.netcracker.com 
+cgtmaweb02cn-s.gms.netcracker.com 
+cgtmaweb01cn-s.gms.netcracker.com 
+cgtmaweb04cn-s.gms.netcracker.com 
+
+[cogeco-prod]
+cgtmpweb01cn-s.gms.netcracker.com
+cgtmpweb02cn-s.gms.netcracker.com
+cgtmpweb03cn-s.gms.netcracker.com
+cgtmpweb04cn-s.gms.netcracker.com
+
+
+[cogeco-tst5]
+cgtmaweb05cn-s.gms.netcracker.com
+
+[prod-tst5:children]
+cogeco-tst5
+cogeco-prod
+
+
+
+[prod-tst5:vars]
+ansible_ssh_user=gms_krbh0717
+ansible_ssh_pass=4rfvVFR$
+ansible_become_method=dzdo
+ansible_become_user=netcrk
+ansible_become_pass=4rfvVFR$
+
+

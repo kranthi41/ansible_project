@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ntpd_version=$(ntpd --version | awk '{print $2}')
+
+cat << EOF
+{ "NTPD_VERSIONS": $ntpd_version
+}
+EOF

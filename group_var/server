@@ -1,0 +1,5 @@
+ansible_ssh_user=gms_krbh0717
+ansible_ssh_pass=4rfvVFR$
+ansible_become_method=dzdo
+ansible_become_user=netcrk
+ansible_become_pass=4rfvVFR$
