@@ -1,0 +1,12 @@
+---
+ - name: this playbook is used for command line variable 
+   hosts: slave.server.com
+   gather_facts: false 
+   become: yes 
+   tasks: 
+   - name: this play is for command line vailable 
+     debug:
+      msg:
+       - "The value of x is {{x}}"
+       - "the values of y is {{y}}"
+

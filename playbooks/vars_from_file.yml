@@ -1,0 +1,9 @@
+---
+ - name: this playbook is read the varibles from file 
+   hosts: slave.server.com 
+   gather_facts: false 
+   vars_files: 
+     - /home/ansible/ansible_project/variables/working_var_2.yml 
+   tasks:
+   - name: displaying vars 
+     debug: var=directory_name
