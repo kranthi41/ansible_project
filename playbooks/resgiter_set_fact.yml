@@ -1,0 +1,12 @@
+---
+ - name:  this playbook is for learning register and set_facts 
+   hosts: slave.server.com
+   become: yes 
+   gather_facts: false 
+   tasks: 
+   - name: this play is for checkng bash version 
+     shell: "/bin/bash --version"
+     register: bash_ver
+   - set_fact: 
+      bash_version: "{{bash_ver.stdout.split('\n')[0].split()[3]}}"
+   - debug: var=bash_version

@@ -1,0 +1,18 @@
+---
+ - name: this playbook is vars_prompt usage
+   hosts: slave.server.com
+   gather_facts: false 
+   become: yes 
+   vars_prompt: 
+    - name: user_name
+      prompt: please enter the username 
+      private: no 
+    - name:  mobile_number 
+      prompt: please enter the mobile number 
+      private: no 
+   tasks: 
+   - debug: 
+      msg: 
+       - "User name is {{user_name}}"
+       - "User mobile number is {{mobile_number}}"
+        

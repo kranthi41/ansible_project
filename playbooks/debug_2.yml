@@ -1,0 +1,17 @@
+---
+ - name: this playbook is for displaying key calues pair type 
+   hosts: slave.server.com
+   gather_facts: false 
+   become: yes
+   vars:
+    pakgs: ['nano', 'vim', 'httpd', 'mysql']
+    web_service: {'linux' : 'httpd', 'ubuntu' : 'apache2'}
+   tasks: 
+   - name: this is for dispalying variables type 
+     debug: var=pakgs[0:3]
+      #msg:
+      # - "values of pakgs are  {{pakgs}}"
+      # - "values of web_service are {{web_service}}"
+   - debug: var=web_service
+   - debug: var=web_service.keys()
+   - debug: var=web_service['linux']

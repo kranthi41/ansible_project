@@ -1,0 +1,20 @@
+---
+ - name: this playbook is for displaying message
+   hosts: slave.server.com
+   become: yes 
+   vars:
+    x: 23
+    y: 27
+    my_name: Kranthi kumar 
+    my_b: true 
+    my_c: 23.3 
+   tasks:
+   - name: siplaying message 
+     debug: 
+       msg: 
+        - "Hi Kranthi kumar how are you"
+        - " this is my ansible version {{ansible_os_family}}" 
+        - "Values of x is {{x}}"
+        - "values of y is {{y}}"
+        - "my name is : {{my_name}}"
+        - "Values of b and c are {{my_b}} {{my_c}}"
