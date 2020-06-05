@@ -4,5 +4,7 @@
    become: yes 
    gather_facts: false
    tasks:
-   - yum: name=wget state=present 
+   - yum: 
+       name: wget 
+       state: present 
       
