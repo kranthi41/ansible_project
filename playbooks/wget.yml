@@ -1,0 +1,8 @@
+---
+ - name: this playbook is for installing wget on slave server 
+   hosts: slave.server.com
+   become: yes 
+   gather_facts: false
+   tasks:
+   - yum: name=wget state=present 
+      
